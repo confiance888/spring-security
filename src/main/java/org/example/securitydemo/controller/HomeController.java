@@ -13,7 +13,7 @@ public class HomeController {
 
     @GetMapping("/user")
     public String userHello() {
-        return " You are logged in successfully.";
+        return "  Hello Confiance You are logged in successfully.";
     }
 
     @GetMapping("/admin")

@@ -1,24 +1,49 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Login</title>
+    <meta charset="UTF-8" />
+    <title>Login</title>
 </head>
-<body>
-  <h2>Login</h2>
-  <form th:action="@{/login}" method="post">
-    <div>
-      <label>Username:</label>
-      <input type="text" name="username"/>
-    </div>
-    <div>
-      <label>Password:</label>
-      <input type="password" name="password"/>
-    </div>
-    <div>
-      <button type="submit">Sign in</button>
-    </div>
-  </form>
-  <p><a th:href="@{/}">Home</a></p>
+<body style="margin:0; font-family:'Poppins', Arial, sans-serif; background:linear-gradient(135deg, #1e3c72, #2a5298); height:100vh; display:flex; justify-content:center; align-items:center;">
+
+<div style="background:white; padding:50px 60px; border-radius:16px; box-shadow:0 15px 35px rgba(0,0,0,0.2); text-align:center; width:380px;">
+
+    <h2 style="color:#2c3e50; margin-bottom:30px; letter-spacing:1px;">Welcome Back 👋</h2>
+
+    <form th:action="@{/login}" method="post" style="display:flex; flex-direction:column; gap:20px; text-align:left;">
+        <div>
+            <label style="display:block; margin-bottom:8px; font-weight:600; color:#34495e;">Username</label>
+            <input type="text" name="username" placeholder="Enter username"
+                   style="width:100%; padding:12px; border:1px solid #ccc; border-radius:8px; font-size:15px; outline:none; transition:0.3s;"
+                   onfocus="this.style.borderColor='#2980b9';" onblur="this.style.borderColor='#ccc';" />
+        </div>
+
+        <div>
+            <label style="display:block; margin-bottom:8px; font-weight:600; color:#34495e;">Password</label>
+            <input type="password" name="password" placeholder="Enter password"
+                   style="width:100%; padding:12px; border:1px solid #ccc; border-radius:8px; font-size:15px; outline:none; transition:0.3s;"
+                   onfocus="this.style.borderColor='#2980b9';" onblur="this.style.borderColor='#ccc';" />
+        </div>
+
+        <button type="submit"
+                style="background:#3498db; color:white; border:none; padding:12px; border-radius:8px; cursor:pointer; font-size:16px; font-weight:bold; transition:all 0.3s ease;"
+                onmouseover="this.style.background='#1abc9c';" onmouseout="this.style.background='#3498db';">
+            Sign in
+        </button>
+
+        <button type="button"
+                th:onclick="'window.location.href=\'/signup\''"
+                style="background:#ffffff; color:#3498db; border:2px solid #3498db; padding:12px; border-radius:8px; cursor:pointer; font-size:16px; font-weight:bold; transition:all 0.3s ease;"
+                onmouseover="this.style.background='#3498db'; this.style.color='white';"
+                onmouseout="this.style.background='white'; this.style.color='#3498db';">
+            Sign up
+        </button>
+    </form>
+
+    <p style="margin-top:25px;">
+        <a th:href="@{/}" style="text-decoration:none; color:#2980b9; font-weight:bold;">🏠 Go to Home</a>
+    </p>
+</div>
+
 </body>
 </html>

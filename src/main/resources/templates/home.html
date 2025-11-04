@@ -1,13 +1,23 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Home</title>
+    <meta charset="UTF-8" />
+    <title>Home</title>
 </head>
-<body>
-  <h2>Home</h2>
-  <p>Welcome, <span th:text="${username}">user</span>!</p>
-  <p><a th:href="@{/admin}">Admin page (requires ADMIN)</a></p>
-  <p><a th:href="@{/logout}">Logout</a></p>
+<body style="margin:0; font-family:Arial, sans-serif; background:#f9f9f9; color:#333; display:flex; flex-direction:column; align-items:center; justify-content:center; height:100vh;">
+
+<div style="text-align:center; background:white; padding:40px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1);">
+    <h2 style="margin-bottom:20px; color:#2c3e50;">Home</h2>
+    <p style="font-size:18px; margin-bottom:20px;">
+        Welcome, <span th:text="${username}" style="font-weight:bold; color:#2980b9;">user</span>!
+    </p>
+    <p style="margin:10px 0;">
+        <a th:href="@{/admin}" style="text-decoration:none; background:#3498db; color:white; padding:10px 20px; border-radius:6px;">Admin Page (requires ADMIN)</a>
+    </p>
+    <p style="margin:10px 0;">
+        <a th:href="@{/logout}" style="text-decoration:none; background:#e74c3c; color:white; padding:10px 20px; border-radius:6px;">Logout</a>
+    </p>
+</div>
+
 </body>
 </html>
