@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        /* ==== CSS ==== */
+        body {
+            margin:0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+        }
+        .sidebar{
+            width: 220px;
+            height: 100vh;
+            background: #2c3e50;
+            color: #fff;
+            position: fixed;
+            padding: 20px;
+        }
+        .sidebar h2{
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .sidebar ul{
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li{
+            margin: 20px 0;
+        }
+        .sidebar ul li a{
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .main-content{
+            margin-left: 240px;
+            padding: 20px;
+        }
+        .top-nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #2980b9;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+        .actions{
+            margin-top: 40px;
+        }
+        .action-btn,
+        .logout-btn{
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-right: 15px;
+            font-size: 16px;
+        }
+        .action-btn:hover,
+        .logout-btn:hover{
+            background: #1abc9c;
+        }
+    </style>
+    <script>
+        /* ==== JS ==== */
+        document.addEventListener("DOMContentLoaded", () => {
+            const logoutBtn = document.querySelector(".logout-btn");
+            if(logoutBtn){
+                logoutBtn.addEventListener("click", () => {
+                    alert("You have logged out successfully!");
+                });
+            }
+
+            const actionBtns = document.querySelectorAll(".action-btn");
+            actionBtns.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    alert(btn.textContent + " clicked!");
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="sidebar">
+    <h2>Dashboard</h2>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/admin">Admin</a></li>
+        <li><a href="#">Users</a></li>
+        <li><a href="#">Posts</a></li>
+        <li><a href="#">Settings</a></li>
+    </ul>
+</div>
+<div class="main-content">
+    <div class="top-nav">
+        <h1>Welcome Admin</h1>
+        <button class="logout-btn">Logout</button>
+    </div>
+    <div class="actions">
+        <button class="action-btn">Add User</button>
+        <button class="action-btn">View Posts</button>
+    </div>
+</div>
+</body>
+</html>
